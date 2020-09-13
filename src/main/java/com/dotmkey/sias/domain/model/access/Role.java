@@ -1,6 +1,6 @@
-package dotmkey.sias.domain.model.access;
+package com.dotmkey.sias.domain.model.access;
 
-import dotmkey.sias.domain.model.ConcurrencySafeDomainObject;
+import com.dotmkey.sias.domain.model.ConcurrencySafeDomainObject;
 
 import java.util.Collection;
 

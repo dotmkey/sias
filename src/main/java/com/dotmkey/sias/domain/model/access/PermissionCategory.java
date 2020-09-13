@@ -1,12 +1,8 @@
-package dotmkey.sias.domain.model.access;
+package com.dotmkey.sias.domain.model.access;
 
-import dotmkey.sias.domain.model.IdentifiedDomainObject;
+import com.dotmkey.sias.domain.model.ConcurrencySafeDomainObject;
 
-import java.util.Collection;
-
-public class Permission extends IdentifiedDomainObject {
-
-    private String categoryCode;
+public class PermissionCategory extends ConcurrencySafeDomainObject {
 
     private String code;
 
@@ -14,15 +10,10 @@ public class Permission extends IdentifiedDomainObject {
 
     private String description;
 
-    public Permission(String categoryCode, String code, String name, String description) {
-        this.setCategoryCode(categoryCode);
+    public PermissionCategory(String code, String name, String description) {
         this.setCode(code);
         this.setName(name);
         this.setDescription(description);
-    }
-
-    public String categoryCode() {
-        return this.categoryCode;
     }
 
     public String code() {
@@ -35,10 +26,6 @@ public class Permission extends IdentifiedDomainObject {
 
     public String description() {
         return this.description;
-    }
-
-    private void setCategoryCode(String categoryCode) {
-        this.categoryCode = categoryCode;
     }
 
     private void setCode(String code) {

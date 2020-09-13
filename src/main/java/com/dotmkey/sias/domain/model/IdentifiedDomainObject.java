@@ -1,4 +1,4 @@
-package dotmkey.sias.domain.model;
+package com.dotmkey.sias.domain.model;
 
 public class IdentifiedDomainObject {
 

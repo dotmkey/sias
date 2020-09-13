@@ -1,4 +1,4 @@
-package dotmkey.sias;
+package com.dotmkey.sias;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
