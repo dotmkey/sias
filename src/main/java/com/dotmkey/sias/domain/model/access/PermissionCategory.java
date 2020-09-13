@@ -4,19 +4,24 @@ import com.dotmkey.sias.domain.model.ConcurrencySafeDomainObject;
 
 public class PermissionCategory extends ConcurrencySafeDomainObject {
 
-    private String code;
+    private PermissionCategoryCodeEnum code;
 
     private String name;
 
     private String description;
 
-    public PermissionCategory(String code, String name, String description) {
+    public PermissionCategory(PermissionCategoryCodeEnum code, String name) {
         this.setCode(code);
         this.setName(name);
+    }
+
+    public PermissionCategory(PermissionCategoryCodeEnum code, String name, String description) {
+        this(code, name);
+
         this.setDescription(description);
     }
 
-    public String code() {
+    public PermissionCategoryCodeEnum code() {
         return this.code;
     }
 
@@ -28,7 +33,7 @@ public class PermissionCategory extends ConcurrencySafeDomainObject {
         return this.description;
     }
 
-    private void setCode(String code) {
+    private void setCode(PermissionCategoryCodeEnum code) {
         this.code = code;
     }
 

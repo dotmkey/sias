@@ -4,26 +4,31 @@ import com.dotmkey.sias.domain.model.IdentifiedDomainObject;
 
 public class Permission extends IdentifiedDomainObject {
 
-    private String categoryCode;
+    private PermissionCategoryCodeEnum categoryCode;
 
-    private String code;
+    private PermissionCodeEnum code;
 
     private String name;
 
     private String description;
 
-    public Permission(String categoryCode, String code, String name, String description) {
+    public Permission(PermissionCategoryCodeEnum categoryCode, PermissionCodeEnum code, String name) {
         this.setCategoryCode(categoryCode);
         this.setCode(code);
         this.setName(name);
+    }
+
+    public Permission(PermissionCategoryCodeEnum categoryCode, PermissionCodeEnum code, String name, String description) {
+        this(categoryCode, code, name);
+
         this.setDescription(description);
     }
 
-    public String categoryCode() {
+    public PermissionCategoryCodeEnum categoryCode() {
         return this.categoryCode;
     }
 
-    public String code() {
+    public PermissionCodeEnum code() {
         return this.code;
     }
 
@@ -35,11 +40,11 @@ public class Permission extends IdentifiedDomainObject {
         return this.description;
     }
 
-    private void setCategoryCode(String categoryCode) {
+    private void setCategoryCode(PermissionCategoryCodeEnum categoryCode) {
         this.categoryCode = categoryCode;
     }
 
-    private void setCode(String code) {
+    private void setCode(PermissionCodeEnum code) {
         this.code = code;
     }
 
