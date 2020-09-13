@@ -1,10 +1,10 @@
 package com.dotmkey.sias.domain.model.access;
 
-import com.dotmkey.sias.domain.model.ConcurrencySafeDomainObject;
+import com.dotmkey.sias.domain.model.AbstractConcurrencySafeDomainObject;
 
 import java.util.Collection;
 
-public class Role extends ConcurrencySafeDomainObject {
+public class Role extends AbstractConcurrencySafeDomainObject {
 
     private RoleCodeEnum code;
 

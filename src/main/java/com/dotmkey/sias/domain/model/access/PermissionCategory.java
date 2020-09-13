@@ -1,8 +1,8 @@
 package com.dotmkey.sias.domain.model.access;
 
-import com.dotmkey.sias.domain.model.ConcurrencySafeDomainObject;
+import com.dotmkey.sias.domain.model.AbstractConcurrencySafeDomainObject;
 
-public class PermissionCategory extends ConcurrencySafeDomainObject {
+public class PermissionCategory extends AbstractConcurrencySafeDomainObject {
 
     private PermissionCategoryCodeEnum code;
 

@@ -1,12 +1,12 @@
 package com.dotmkey.sias.domain.model;
 
-public class IdentifiedDomainObject {
+public abstract class AbstractIdentifiedDomainObject {
 
     private static final long serialVersionUID = 1L;
 
     private long id;
 
-    protected IdentifiedDomainObject() {
+    protected AbstractIdentifiedDomainObject() {
         super();
 
         this.setId(-1);

@@ -1,12 +1,12 @@
 package com.dotmkey.sias.domain.model;
 
-public class ConcurrencySafeDomainObject extends IdentifiedDomainObject {
+public abstract class AbstractConcurrencySafeDomainObject extends AbstractIdentifiedDomainObject {
 
     private static final long serialVersionUID = 1L;
 
     private int concurrencyVersion;
 
-    protected ConcurrencySafeDomainObject() {
+    protected AbstractConcurrencySafeDomainObject() {
         super();
     }
 
