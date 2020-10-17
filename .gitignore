@@ -6,9 +6,9 @@ target/
 !/var
 /var/*
 !/var/.gitkeep
-!/var/mongo
-/var/mongo/*
-!/var/mongo/.gitkeep
+!/var/jenkins
+/var/jenkins/*
+!/var/jenkins/.gitkeep
 
 ### STS ###
 .apt_generated

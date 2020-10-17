@@ -2,19 +2,35 @@ version: "3.8"
 
 services:
 
-  sias:
-    image: "bitnami/java:14"
-    container_name: sias
-    working_dir: /app
-    command: "java -jar sias-0.0.1-SNAPSHOT.jar"
+  jenkins:
+    build:
+      context: ./docker/jenkins
+    container_name: jenkins
     volumes:
-      - ./target:/app
-
-  mongo:
-    image: "bitnami/mongodb:4.4"
-    user: root
-    container_name: mongo
-    volumes:
-      - ./var/mongo:/bitnami/mongodb
+      - ./var/jenkins:/var/jenkins_home
+      - ~:/home
+      - /var/run/docker.sock:/var/run/docker.sock
     ports:
-      - 38128:27017
+      - 8080:8080
+
+
+
+#  sias-dev:
+#    image: "bitnami/java:14"
+#    container_name: sias-dev
+#    working_dir: /app
+#    command: "/bin/bash -c './mvnw clean package && java -jar target/sias-0.0.1-SNAPSHOT.jar'"
+#    volumes:
+#      - ./:/app
+#    depends_on:
+#      - mongo
+#
+#  sias:
+#    image: "bitnami/java:14"
+#    container_name: sias
+#    working_dir: /app
+#    command: "java -jar sias-0.0.1-SNAPSHOT.jar"
+#    volumes:
+#      - ./target:/app
+#    depends_on:
+#      - sias-dev
