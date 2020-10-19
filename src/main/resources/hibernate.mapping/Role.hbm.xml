@@ -1,0 +1,12 @@
+<hibernate-mapping xmlns="http://www.hibernate.org/xsd/hibernate-mapping">
+    <class name="com.dotmkey.sias.domain.model.access.Role" table="role">
+        <id name="id" type="long" column="id" unsaved-value="-1">
+            <generator class="native" />
+        </id>
+        <version name="concurrencyVersion" column="concurrency_version" type="int" />
+        <property name="code" column="code" type="com.dotmkey.sias.insfrastructure.persistence.hibernate.type.RoleCodeEnumType" />
+        <property name="name" column="name" type="java.lang.String" />
+        <property name="description" column="description" type="java.lang.String" />
+        <property name="permissionCodes" column="permission_codes" type="java.util.Collection" />
+    </class>
+</hibernate-mapping>

@@ -2,7 +2,7 @@ package com.dotmkey.sias.domain.model.access;
 
 import com.dotmkey.sias.domain.model.AbstractConcurrencySafeDomainObject;
 
-import java.util.Collection;
+import java.util.Set;
 
 public class Role extends AbstractConcurrencySafeDomainObject {
 
@@ -12,9 +12,10 @@ public class Role extends AbstractConcurrencySafeDomainObject {
 
     private String description;
 
-    private Collection<String> permissionCodes;
+    private Set<PermissionCodeEnum> permissionCodes;
 
     public Role(String code, String name) {
+        this();
         this.setCode(code);
         this.setName(name);
     }
@@ -25,13 +26,13 @@ public class Role extends AbstractConcurrencySafeDomainObject {
         this.setDescription(description);
     }
 
-    public Role(String code, String name, String description, Collection<String> permissionCodes) {
+    public Role(String code, String name, String description, Set<PermissionCodeEnum> permissionCodes) {
         this(code, name, description);
 
         this.setPermissionCodes(permissionCodes);
     }
 
-    public Role(String code, String name, Collection<String> permissionCodes) {
+    public Role(String code, String name, Set<PermissionCodeEnum> permissionCodes) {
         this(code, name);
 
         this.setPermissionCodes(permissionCodes);
@@ -49,7 +50,7 @@ public class Role extends AbstractConcurrencySafeDomainObject {
         return this.description;
     }
 
-    public Collection<String> permissionCodes() {
+    public Set<PermissionCodeEnum> permissionCodes() {
         return this.permissionCodes;
     }
 
@@ -65,8 +66,11 @@ public class Role extends AbstractConcurrencySafeDomainObject {
         this.description = description;
     }
 
-    private void setPermissionCodes(Collection<String> permissionCodes) {
+    private void setPermissionCodes(Set<PermissionCodeEnum> permissionCodes) {
         this.permissionCodes = permissionCodes;
     }
 
+    protected Role() {
+        super();
+    }
 }

@@ -11,6 +11,7 @@ public class PermissionCategory extends AbstractConcurrencySafeDomainObject {
     private String description;
 
     public PermissionCategory(PermissionCategoryCodeEnum code, String name) {
+        this();
         this.setCode(code);
         this.setName(name);
     }
@@ -45,4 +46,7 @@ public class PermissionCategory extends AbstractConcurrencySafeDomainObject {
         this.description = description;
     }
 
+    protected PermissionCategory() {
+        super();
+    }
 }
